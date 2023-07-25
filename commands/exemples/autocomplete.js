@@ -9,13 +9,33 @@ export const command = {
         option.setName('option')
         .setDescription('option  qui va être complétée')
         .setAutocomplete(true)
-        ),
+        )
+    .addStringOption(option =>
+        option.setName('deuxieme-option')
+        .setDescription('voici une  deuxieme option')
+        .setAutocomplete(true)),
     async autocomplete(interaction) {
-        const choices = [
-            { name: "Salut!", value: "1" },
-            { name: "Ceci est un exemple", value:  "2" },
-            {  name: "D'autocomplete!", value: "3" }
-        ];
+        const option = interaction.options.getFocused(true);
+
+        let choices;
+
+        if(option.name === "option")
+        {
+            choices = [
+                { name: "Salut!", value: "1" },
+                { name: "Ceci est un exemple", value:  "2" },
+                { name: "D'autocomplete!", value: "3" }
+            ];
+        }
+        if(option.name === "deuxieme-option") {
+            choices = [
+                { name: "Bonjour!", value: "1" },
+                { name:  "Voici un petit exemple", value: "2" },
+                { name: "d'autocompletion d'option!", value: "3" }
+            ]
+        }
+
+
 
         await interaction.respond(choices.map(c => ({ name: c.name, value: c.value })));
     },
