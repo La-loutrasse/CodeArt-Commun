@@ -1,0 +1,19 @@
+{
+  "name": "codeart-commun",
+  "version": "1.0.0",
+  "description": "base du bot codeart commun",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bot"
+  ],
+  "author": "Bot coopératif ; base proposée par  watermelon",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.11.0",
+    "dotenv": "^16.3.1"
+  }
+}
