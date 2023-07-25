@@ -8,7 +8,7 @@ setInterval(() =>{
 export const button = {
     customId: 'ping.actualiser',
     async execute(interaction) {
-        if(cooldown.includes(interaction.user.id)) return await interaction.reply({ content: `Attendez encore ${time} secondes pour utiliser ce  bouton!`, ephemeral: true });
+        if(cooldown.includes(interaction.user.id)) return await interaction.reply({ content: `Attendez encore ${time - (cooldown.length - 1) * 30} secondes pour utiliser ce  bouton!`, ephemeral: true });
         await interaction.deferUpdate();
         await interaction.message.edit({ content: `Latence du bot: \`${interaction.client.ws.ping}\`` });
         cooldown.push(interaction.user.id);
