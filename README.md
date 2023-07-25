@@ -6,7 +6,7 @@
 
 Ceci est le bot coopératif du serveur **CodeArt Community**!
 
-[![Discord Server](https://img.shields.io/discord/1234567890?color=%237289DA&label=Discord&logo=discord&logoColor=white)](https://discord.gg/zqjSQE9ff2)
+[![Discord Server](https://img.shields.io/discord/1113166834720592103?color=%237289DA&label=Discord&logo=discord&logoColor=white)](https://discord.gg/zqjSQE9ff2)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 ## Description
