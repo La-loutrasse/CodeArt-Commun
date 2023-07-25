@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://cdn.discordapp.com/attachments/1113208040502595764/1123972035392053310/AFFICHE_ETE.png" alt="CodeArt-Commun" width="200" height="108">
+  <img src="https://cdn.discordapp.com/attachments/1125719094738563114/1133501069171900436/c844405acc53608c60d84dc484c1dd6f.webp" alt="CodeArt-Commun">
 </p>
 
 # CodeArt-Commun
