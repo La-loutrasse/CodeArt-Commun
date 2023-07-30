@@ -30,7 +30,7 @@ export async function loadCommands(client) {
     }
   }
 
-  const rest = new REST().setToken(process.env.TOKEN);
+  const rest = new REST().setToken(process.env.CLIENT_TOKEN);
 
   (async () => {
     try {
