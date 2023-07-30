@@ -18,4 +18,4 @@ client.commands = new Collection();
 loadCommands(client);
 loadEvents(client);
 
-client.login(process.env.TOKEN);
+client.login(process.env.CLIENT_TOKEN);
