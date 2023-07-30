@@ -1,7 +1,7 @@
 import { ButtonInteraction } from "discord.js";
 
-var cooldown = [];
-var time = 0;
+let cooldown = [];
+let time = 0;
 
 setInterval(() => {
     if (!time <= 0) time -= 1;
