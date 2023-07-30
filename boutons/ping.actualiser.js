@@ -1,19 +1,33 @@
+import { ButtonInteraction } from "discord.js";
+
 var cooldown = [];
 var time = 0;
 
-setInterval(() =>{
-    if(!time <= 0) time -= 1;
+setInterval(() => {
+    if (!time <= 0) time -= 1;
 }, 1000)
 
 export const button = {
     customId: 'ping.actualiser',
+    /**
+     * @param {ButtonInteraction} interaction
+     * @returns
+    */
     async execute(interaction) {
-        if(cooldown.includes(interaction.user.id)) return await interaction.reply({ content: `Attendez encore ${time - (cooldown.length - 1) * 30} secondes pour utiliser ce  bouton!`, ephemeral: true });
+        if (cooldown.includes(interaction.user.id)) {
+            return await interaction.reply({
+                content: `Attendez encore ${time - (cooldown.length - 1) * 30} secondes pour utiliser ce  bouton!`,
+                ephemeral: true
+            })
+        };
         await interaction.deferUpdate();
-        await interaction.message.edit({ content: `Latence du bot: \`${interaction.client.ws.ping}\`` });
+        await interaction.message.edit({
+            content: `Latence du bot: \`${interaction.client.ws.ping}\``
+        });
+
         cooldown.push(interaction.user.id);
         time += 30;
-        setTimeout(() =>{
+        setTimeout(() => {
             cooldown.shift();
         }, 30000);
     }

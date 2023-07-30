@@ -1,21 +1,26 @@
-import { SlashCommandBuilder, ButtonBuilder, ActionRowBuilder, ButtonStyle } from 'discord.js';
+import { SlashCommandBuilder, ButtonBuilder, ActionRowBuilder, ButtonStyle, ChatInputCommandInteraction } from 'discord.js';
 
 export const command = {
     data: new SlashCommandBuilder()
-    .setName('ping')
-    .setDescription('Obtenir la latence du bot')
-    .setDMPermission(true),
+        .setName('ping')
+        .setDescription('Obtenir la latence du bot')
+        .setDMPermission(true),
+    /**
+     * @param {ChatInputCommandInteraction} interaction
+     * @returns
+    */
     async execute(interaction) {
 
         const Button = new ButtonBuilder()
-        .setLabel('Actualiser')
-        .setCustomId('ping.actualiser')
-        .setStyle(ButtonStyle.Secondary);
+            .setLabel('Actualiser')
+            .setCustomId('ping.actualiser')
+            .setStyle(ButtonStyle.Secondary);
 
-        const row = new ActionRowBuilder().addComponents(
-            Button
-        )
+        const row = new ActionRowBuilder().addComponents(Button)
 
-        await interaction.reply({ content: `Latence du bot: \`${interaction.client.ws.ping}\``, components: [row] });
+        return await interaction.reply({
+            content: `Latence du bot: \`${interaction.client.ws.ping}\``,
+            components: [row]
+        });
     }
 }

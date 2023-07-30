@@ -1,5 +1,11 @@
+import { ButtonInteraction } from 'discord.js';
 import { readdirSync } from 'fs';
 import { join, resolve } from 'path';
+
+/**
+ * @param {ButtonInteraction} interaction
+ * @returns
+*/
 
 export async function loadButtons(interaction) {
 

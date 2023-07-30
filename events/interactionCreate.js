@@ -1,8 +1,12 @@
-import { Events } from 'discord.js';
+import { CommandInteraction, Events } from 'discord.js';
 import { loadButtons } from '../handlers/loadComponents.js';
 
 export const event = {
     name: Events.InteractionCreate,
+    /**
+     * @param {CommandInteraction} interaction
+    */
+
     async execute(interaction) {
         if(interaction.isChatInputCommand()) {
             const { command } = interaction.client.commands.get(interaction.commandName);
