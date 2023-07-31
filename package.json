@@ -2,7 +2,7 @@
   "name": "codeart-commun",
   "version": "1.0.0",
   "description": "base du bot codeart commun",
-  "main": "main.js",
+  "main": "src/main.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
